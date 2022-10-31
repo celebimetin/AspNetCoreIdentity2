@@ -15,10 +15,12 @@ namespace AspNetCoreIdentityApp.Web.ViewModels
         [Display(Name = "Email")]
         [Required(ErrorMessage = "Email boş olamaz.")]
         [EmailAddress(ErrorMessage = "Email formatı yanlış")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Display(Name = "Şifre")]
         [Required(ErrorMessage = "Şifre boş olamaz.")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [Display(Name = "Beni Hatırla")]

@@ -21,19 +21,23 @@ namespace AspNetCoreIdentityApp.Web.ViewModels
         [Display(Name = "Email :")]
         [Required(ErrorMessage = "Email boş olamaz.")]
         [EmailAddress(ErrorMessage = "Email formatı yanlış")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Display(Name = "Telefon :")]
         [Required(ErrorMessage = "Telefon boş olamaz.")]
+        [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
 
         [Display(Name = "Şifre :")]
         [Required(ErrorMessage = "Şifre boş olamaz.")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [Display(Name = "Şifre Tekrar :")]
         [Required(ErrorMessage = "Şifre tekrar boş olamaz.")]
         [Compare(nameof(Password), ErrorMessage ="Şifre aynı değildir.")]
+        [DataType(DataType.Password)]
         public string PasswordConfirm { get; set; }
     }
 }
